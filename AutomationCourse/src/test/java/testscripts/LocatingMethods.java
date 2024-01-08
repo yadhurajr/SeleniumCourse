@@ -54,7 +54,7 @@ public class LocatingMethods {
 		WebElement nameElement3 = driver.findElement(By.name("twitter:card"));
 		WebElement nameElement4 = driver.findElement(By.name("twitter:title"));
 		WebElement nameElement5 = driver.findElement(By.name("twitter:description"));
-//		
+		
 		WebElement cssSelector1 = driver.findElement(By.cssSelector("style#classic-theme-styles-inline-css"));
 		WebElement cssSelector2 = driver.findElement(By.cssSelector("style#global-styles-inline-css"));
 		WebElement cssSelector3 = driver.findElement(By.cssSelector("script.rank-math-schema-pro"));
