@@ -37,7 +37,7 @@ public class BrowserCommands extends Base {
 		//browsercommands.browserCommands();
 		//browsercommands.navigationCommands();
 		browsercommands.locators();
-		browsercommands.driverQuit();
+		//browsercommands.driverQuit();
 		
 		
 	}
