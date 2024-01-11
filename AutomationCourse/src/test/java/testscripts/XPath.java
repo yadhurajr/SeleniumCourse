@@ -15,6 +15,12 @@ public class XPath extends Base {
 		WebElement xpathElement7 = driver.findElement(By.xpath("//button[@id='button-one']//parent::form")); //locating parent or identifying parent
 		WebElement xpathElement8 = driver.findElement(By.xpath("//button[@id='button-one']//ancestor::form"));
 		WebElement xpathElement9 = driver.findElement(By.xpath("//div[@class='header-top']//child::div[@class='container']"));
+		WebElement xpathElement10 = driver.findElement(By.xpath("//button[@id='button-one']//following::div[@id='message-one']"));
+		WebElement xpathElement11 = driver.findElement(By.xpath("//button[@id='button-one']//preceding::div"));
+		WebElement xpathElement12 = driver.findElement(By.xpath("//div[@class='form-group']//descendant::label"));
+		WebElement xpathElement13 = driver.findElement(By.xpath("//label[@for='inputEmail4']//following-sibling::input"));
+		
+		
 	}
 
 	public static void main(String[] args) {
