@@ -8,7 +8,9 @@ public class WebElementCommands extends Base {
 
 	public static void main(String[] args) {
 		WebElementCommands webelementcommands = new WebElementCommands();
+		webelementcommands.initializeBrowser();
 		webelementcommands.webElements();
+		webelementcommands.driverQuit();
 
 	}
 

@@ -17,7 +17,7 @@ public class ShowMessageAndGetTotal extends Base {
 		
 		WebElement yourMessageText = driver.findElement(By.xpath("//div[@id='message-one']"));
 		String messageText = yourMessageText.getText();
-		//messageText = messageText.substring(15); //used to remove the prefix
+		
 		
 		if(messageText.contains(input)) {
 			System.out.println("Test Case 1 Passed");
@@ -25,6 +25,10 @@ public class ShowMessageAndGetTotal extends Base {
 	    else {
 	    	System.out.println("Test Case 1 Failed");
 	    }
+		
+		
+		String classNameOfShowMessageButton = showMessageButton.getAttribute("class");
+		boolean isShowMessageButtonDisplayed = showMessageButton.isDisplayed();
 
 	}
 	
