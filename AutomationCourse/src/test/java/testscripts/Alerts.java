@@ -11,15 +11,15 @@ public class Alerts extends Base {
 		driver.navigate().to("https://selenium.obsqurazone.com/javascript-alert.php");
 		WebElement greenClickMeButton = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
 		greenClickMeButton.click();
-		String alertText = driver.switchTo().alert().getText();
-		driver.switchTo().alert().accept();
+		String alertText = driver.switchTo().alert().getText(); //to get the alert message
+		driver.switchTo().alert().accept(); //to click ok
 		WebElement yellowClickMeButton = driver.findElement(By.xpath("//button[@onclick='jsConfirm()']"));
 		yellowClickMeButton.click();
-		driver.switchTo().alert().dismiss(); //to cancel
+		driver.switchTo().alert().dismiss(); //to click cancel
 		WebElement clickForPromptBoxButton = driver.findElement(By.xpath("//button[@onclick='jsPrompt()']"));
 		clickForPromptBoxButton.click();
-		driver.switchTo().alert().sendKeys("Yadhu");
-		driver.switchTo().alert().accept();
+		driver.switchTo().alert().sendKeys("Yadhu"); //to enter input
+		driver.switchTo().alert().accept(); //to click ok
 		
 	}
 	
