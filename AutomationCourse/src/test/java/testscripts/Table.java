@@ -1,5 +1,12 @@
 package testscripts;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,12 +36,14 @@ public class Table extends Base {
             actualHeadings.add(headingElement.getText());
         }
         
-        if (actualHeadings.equals(expectedHeadings)) {
-            System.out.println("All headings are present and in the correct order.");
-        } else {
-            System.out.println("Headings verification failed!");
-        }
-        
+//        if (actualHeadings.equals(expectedHeadings)) {
+//            System.out.println("All headings are present and in the correct order.");
+//        } else {
+//            System.out.println("Headings verification failed!");
+//        }
+        //we use assert instead of if else
+        assertEquals(expectedHeadings, actualHeadings, "Headings verification failed!");
+ 
 	}
 	
 	@Test
@@ -53,11 +62,49 @@ public class Table extends Base {
 			}
 		}
 
-        if (isAshtonCoxPresent) {
-            System.out.println("Name 'Ashton Cox' is present in the Name column.");
-        } else {
-            System.out.println("Name 'Ashton Cox' is not present in the Name column.");
-        }
+        assertTrue(isAshtonCoxPresent, "Searched Item " + expectedName + " is not found!");
 	}
+	
+	@Test
+	public void assertSample1() {
+		boolean flag = false;
+		assertFalse(flag, "Flag is true.");
+	}
+	
+	@Test
+	public void assertSample2() {
+		boolean flag = false;
+		int a=5, b=8;
+		String s = null;
+		String str = "Hello";
+		assertNotEquals(a, b, "a and b are equal");
+		assertNull(s, "s is not null");
+		assertNotNull(str, "str is null");
+	}
+	
+	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
