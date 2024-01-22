@@ -38,5 +38,6 @@ public class FileUpload extends Base{
 		robot.delay(90);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 	}
-
 }
+
+

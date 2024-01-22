@@ -1,7 +1,16 @@
 package testscripts;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ShowMessageAndGetTotal extends Base {
 	
@@ -13,6 +22,8 @@ public class ShowMessageAndGetTotal extends Base {
 		singleInputTestField.sendKeys(input);
 		
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); //explicit wait
+		wait.until(ExpectedConditions.elementToBeClickable(showMessageButton)); //explicit wait
 		showMessageButton.click();
 		
 		WebElement yourMessageText = driver.findElement(By.xpath("//div[@id='message-one']"));
@@ -46,6 +57,11 @@ public class ShowMessageAndGetTotal extends Base {
 		int expectedSumOfAandB = Integer.parseInt(valueA) + Integer.parseInt(valueB);
 		
 		WebElement getTotalButton = driver.findElement(By.xpath("//button[@id='button-two']"));
+		Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
+		        .withTimeout(Duration.ofSeconds(30))
+		        .pollingEvery(Duration.ofSeconds(5))
+		        .ignoring(NoSuchElementException.class);
+		fluentWait.until(ExpectedConditions.elementToBeClickable(getTotalButton));
 		getTotalButton.click();
 		
 		WebElement totalText = driver.findElement(By.xpath("//div[@id='message-two']"));
