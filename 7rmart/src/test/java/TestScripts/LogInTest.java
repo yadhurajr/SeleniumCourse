@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import Pages.LogInPage;
 
-public class LogInTest extends BaseClass {
+public class LogInTest extends Base {
 	
 	@Test(description = "Verify that the user is able to login with correct username and correct password")
 	public void verifyThatTheUserIsAbleToLoginWithCorrectUsernameAndCorrectPassword() {
